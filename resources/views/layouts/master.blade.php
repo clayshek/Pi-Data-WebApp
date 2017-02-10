@@ -1,13 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Pi Data WebApp</title>
 
-        <!-- Fonts -->
+                <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
@@ -63,6 +60,7 @@
                 margin-bottom: 30px;
             }
         </style>
+
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -78,15 +76,14 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Pi Data WebApp
+                <div class="container">
+
+                    @yield('content')
+                
                 </div>
 
-                <div class="pi_status">
-                    Pi status: ONLINE.
-                </div>
-
-                <div class="links">                
+                <div class="links">
+                    <a href="/">Home</a>
                     <a href="/pi">Pi Details</a>
                     <a href="/ups">UPS Stats</a>
                     <a href="https://github.com/clayshek/Pi-Data-WebApp">GitHub</a>
@@ -95,5 +92,7 @@
                 </div>
             </div>
         </div>
+
+        @yield('footer')
     </body>
 </html>

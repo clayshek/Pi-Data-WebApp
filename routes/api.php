@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+//Route::get('/PiHeartbeat', 'Api\PiHeartbeatController@index'); //->middleware('auth:api'); not figured out yet
+//Route::get('/PiHeartbeat/{id}', 'Api\PiHeartbeatController@show');
+Route::post('/PiHeartbeat', 'Api\PiHeartbeatController@store');
+//Route::delete('/PiHeartbeat/{id}', 'Api\PiHeartbeatController@destroy');
+//Route::patch('/PiHeartbeat/{id}', 'Api\PiHeartbeatController@update');

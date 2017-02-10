@@ -18,3 +18,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::get('/pi', 'PiController@index');
+Route::post('/pi', 'PiController@store');
+Route::get('/pi/create', 'PiController@create');
+Route::get('/pi/{pi}', 'PiController@show');
+
+Route::get('/ups', 'UpsController@index');
