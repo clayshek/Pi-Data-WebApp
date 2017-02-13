@@ -87,7 +87,6 @@
                     <a href="/pi">Pi Details</a>
                     <a href="/ups">UPS Stats</a>
                     <a href="https://github.com/clayshek/Pi-Data-WebApp">GitHub</a>
-                    <a href="https://laravel.com/docs">Documentation</a>
                     <a href="/#">About</a>
                 </div>
             </div>

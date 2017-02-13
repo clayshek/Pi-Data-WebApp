@@ -2,7 +2,7 @@
 
 ## Summary
 
-PHP web application developed with Laravel framework (v5.4) for receiving data from 
+PHP web application developed with <a href="https://laravel.com/docs">Laravel</a> framework (v5.4) for receiving data from 
 a Raspberry Pi via an API, and displaying that data via a web front-end. In production
 WIP at http://pidatawebapp.herokuapp.com/.
 
