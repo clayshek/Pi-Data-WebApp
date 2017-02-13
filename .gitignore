@@ -7,5 +7,3 @@
 Homestead.json
 Homestead.yaml
 .env
-php_errors.log
-phpunit.xml
