@@ -28,7 +28,13 @@
         </h3>
         </ul>
 
-        <h3><br />
+        <h3>
+            <a href="\#">
+                Delete this Pi
+            </a>
+        </h3>
+
+        <h3>
             <a href="{{ URL::previous() }}">
                 Back
             </a>

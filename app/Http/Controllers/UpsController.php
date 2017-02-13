@@ -2,18 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Pi;
-use App\PiHeartbeat;
-use Carbon\Carbon;
+use App\Ups;
 use Illuminate\Http\Request;
 
-class PiController extends Controller
+class UpsController extends Controller
 {
-
-    public function __construct()
-    {
-        $this->middleware('auth')->except(['index', 'show']);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -21,12 +14,7 @@ class PiController extends Controller
      */
     public function index()
     {
-        
-        $pis = \App\Pi::first();
-
-        $pis = $pis->get();
-
-        return view('pi.index', compact('pis'));
+        return view('ups.index');
     }
 
     /**
@@ -36,7 +24,7 @@ class PiController extends Controller
      */
     public function create()
     {
-        return view('pi.create');
+        //
     }
 
     /**
@@ -53,33 +41,21 @@ class PiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pi  $pi
+     * @param  \App\Ups  $ups
      * @return \Illuminate\Http\Response
      */
-    public function show(\App\PiHeartbeat $pi)
+    public function show(Ups $ups)
     {
-        // Compare last heartbeat time to current time. If > 12 min, not current.
-        $now = Carbon::now();
-        $heartbeat_age_min = $pi->updated_at->diffInMinutes($now);
-        //dd($heartbeat_age_min); For testing & debug 
-
-        if ($heartbeat_age_min > 12)
-            $pi->current = false;
-        else
-            $pi->current = true;
-
-        //dd($pi->current); For testing & debug 
-
-        return view('pi.show', compact('pi'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pi  $pi
+     * @param  \App\Ups  $ups
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pi $pi)
+    public function edit(Ups $ups)
     {
         //
     }
@@ -88,10 +64,10 @@ class PiController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pi  $pi
+     * @param  \App\Ups  $ups
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pi $pi)
+    public function update(Request $request, Ups $ups)
     {
         //
     }
@@ -99,10 +75,10 @@ class PiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pi  $pi
+     * @param  \App\Ups  $ups
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pi $pi)
+    public function destroy(Ups $ups)
     {
         //
     }

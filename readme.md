@@ -43,6 +43,7 @@ In prod, I run on <a href="http://www.heroku.com">Heroku</a>, which requires the
  - Error handling
  - Add reporting for APC UPS connected to Raspberry Pi 
  - Add SMTP support
+ - Upload & document scripts used on Raspberry Pi
 
 ## License
 

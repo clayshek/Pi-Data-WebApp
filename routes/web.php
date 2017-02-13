@@ -25,3 +25,7 @@ Route::get('/pi/create', 'PiController@create');
 Route::get('/pi/{pi}', 'PiController@show');
 
 Route::get('/ups', 'UpsController@index');
+
+Route::get('/about', function () {
+    return view('pi.about');
+});

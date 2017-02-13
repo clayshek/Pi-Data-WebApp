@@ -21,7 +21,7 @@
 
          <h2>
             <a href="/pi/create">
-            Add a new Pi Device to the system
+            Add a new Pi to the system
             </a>
          </h2>
         </div>
