@@ -6,10 +6,11 @@
                     Pi Data WebApp
                 </div>
 
+<!--
                 <div class="pi_status">
                     Pi status: ONLINE.
                 </div>
-                <br><br>
+-->
 
             </div>
 @endsection

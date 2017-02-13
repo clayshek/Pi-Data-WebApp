@@ -62,6 +62,11 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            .about-content {
+                width: 85vh;
+                text-align: left;
+            }
         </style>
 
     </head>

@@ -4,7 +4,6 @@
 
         <h1>Raspberry Pi Details:</h1>
 
-        <ul>
         <h3>
             <center>
             <table>
@@ -26,7 +25,6 @@
             </table>
             </center>
         </h3>
-        </ul>
 
         <h3>
             <a href="\#">
