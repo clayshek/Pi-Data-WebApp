@@ -13,8 +13,7 @@ Pre-requisites:
     - <a href="https://getcomposer.org/">Composer</a>
     - A database engine. <a href="https://www.postgresql.org/download/">PostgreSQL</a> v9.6 used in prod. Any others <a href="https://laravel.com/docs/5.4/database">supported by Laravel</a> are ok.
 
-<pre><code>
-git clone https://github.com/clayshek/Pi-Data-WebApp.git
+<pre><code>git clone https://github.com/clayshek/Pi-Data-WebApp.git
 cd Pi-Data-WebApp
 composer install
 </code></pre>
@@ -30,6 +29,11 @@ Confirm APP_KEY in .env file updated accordingly.
 Run the following to create database tables:
 <pre><code>php artisan migrate</code></pre>
 
+Configure your local web server to serve the application.
+Locally for Dev, use Artisan:
+<pre><code>php artisan serve</code></pre>
+
+In prod, I run on <a href="http://www.heroku.com">Heroku</a>, which requires the 'Procfile' file.
 
 
 ## To-Do
