@@ -105,8 +105,6 @@ class PiController extends Controller
             //dd($pidata->current); For testing & debug 
         } //end if
 
-        else 
-
         return view('pi.show', compact('pidata'));
     }
 
