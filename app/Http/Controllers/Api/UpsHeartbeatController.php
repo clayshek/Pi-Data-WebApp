@@ -32,7 +32,8 @@ class UpsHeartbeatController extends Controller
      */
     public function store(Request $request)
     {
-        UpsHeartbeat::create($request->all());
+        //UpsHeartbeat::create($request->all());
+        return ('test');
     }
 
     /**
