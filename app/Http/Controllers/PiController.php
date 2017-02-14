@@ -21,12 +21,21 @@ class PiController extends Controller
      */
     public function index()
     {
+    if (Pi::first())
+        {
+            $pis = \App\Pi::first();
+
+            $pis = $pis->get();
+
+            return view('pi.index', compact('pis'));
+        }
+    else 
+        {
+            session()->flash('message', 'There are no Raspberry Pis added to the system yet.');
+            return view('pi.create');
+        }
         
-        $pis = \App\Pi::first();
 
-        $pis = $pis->get();
-
-        return view('pi.index', compact('pis'));
     }
 
     /**

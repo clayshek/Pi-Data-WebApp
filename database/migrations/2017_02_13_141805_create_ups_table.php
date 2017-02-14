@@ -14,7 +14,18 @@ class CreateUpsTable extends Migration
     public function up()
     {
         Schema::create('ups', function (Blueprint $table) {
-            $table->increments('id');
+            $table->integer('id')->unique()->unsigned();
+            $table->foreign('id')->references('id')->on('pis');
+            $table->dateTime('date');
+            $table->string('upsname');
+            $table->string('model');
+            $table->string('status');
+            $table->string('linev');
+            $table->string('loadpct');
+            $table->string('bcharge');
+            $table->string('timeleft');
+            $table->string('battv');
+            $table->string('lastxfer');
             $table->timestamps();
         });
     }
