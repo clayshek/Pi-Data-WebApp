@@ -24,7 +24,8 @@ Route::post('/pi', 'PiController@store');
 Route::get('/pi/create', 'PiController@create');
 Route::get('/pi/{pi}', 'PiController@show');
 
-Route::get('/ups', 'UpsController@index');
+Route::get('/ups', 'UpsHeartbeatController@index');
+Route::get('/ups/{id}', 'UpsHeartbeatController@show');
 
 Route::get('/about', function () {
     return view('about');

@@ -41,9 +41,11 @@ In prod, I run on <a href="http://www.heroku.com">Heroku</a>, which requires the
  - User Registration
  - Authentication & Authorization
  - Error handling
+ - Add Pi delete functionality
  - Add reporting for APC UPS connected to Raspberry Pi 
  - Add SMTP support
  - Upload & document scripts used on Raspberry Pi
+ - Add config file for Pi with configurable ID and API endpoint
 
 ## License
 

@@ -67,6 +67,11 @@
                 width: 85vh;
                 text-align: left;
             }
+
+            .pi-delete-link {
+                font-size: 17px;
+            }
+
         </style>
 
     </head>

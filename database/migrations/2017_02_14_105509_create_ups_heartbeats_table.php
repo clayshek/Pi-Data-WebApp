@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUpsTable extends Migration
+class CreateUpsHeartbeatsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateUpsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ups', function (Blueprint $table) {
-            $table->integer('id')->unique()->unsigned();
-            $table->foreign('id')->references('id')->on('pis');
+        Schema::create('ups_heartbeats', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('pi_id')->unsigned();
+            $table->foreign('pi_id')->references('id')->on('pis');
             $table->dateTime('date');
             $table->string('upsname');
             $table->string('model');
@@ -37,6 +38,6 @@ class CreateUpsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ups');
+        Schema::dropIfExists('ups_heartbeats');
     }
 }

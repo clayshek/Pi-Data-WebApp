@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Ups;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\UpsHeartbeat;
 
-class UpsController extends Controller
+class UpsHeartbeatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,18 +15,7 @@ class UpsController extends Controller
      */
     public function index()
     {
-       if (Ups::first())
-            {
-                $ups = \App\Ups::first();
-                $ups = $ups->groupBy('id')->get();
-                return view('ups.index', compact('ups'));
-            }
-        else 
-            {
-                $ups = null;
-                return view('ups.index', compact('ups'));
-            }
- 
+        //
     }
 
     /**
@@ -33,10 +23,6 @@ class UpsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -46,39 +32,35 @@ class UpsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        UpsHeartbeat::create($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Ups  $ups
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Ups $ups)
-    {
-        dd($ups);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Ups  $ups
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Ups $ups)
+    public function show($id)
     {
         //
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Ups  $ups
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ups $ups)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -86,10 +68,10 @@ class UpsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Ups  $ups
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ups $ups)
+    public function destroy($id)
     {
         //
     }

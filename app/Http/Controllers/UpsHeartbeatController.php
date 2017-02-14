@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Ups;
+use App\Pi;
+use App\UpsHeartbeat;
 use Illuminate\Http\Request;
 
-class UpsController extends Controller
+class UpsHeartbeatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +15,9 @@ class UpsController extends Controller
      */
     public function index()
     {
-       if (Ups::first())
+        if (UpsHeartbeat::first())
             {
-                $ups = \App\Ups::first();
-                $ups = $ups->groupBy('id')->get();
+                $ups = \App\UpsHeartbeat::select('pi_id')->distinct()->get();
                 return view('ups.index', compact('ups'));
             }
         else 
@@ -25,7 +25,6 @@ class UpsController extends Controller
                 $ups = null;
                 return view('ups.index', compact('ups'));
             }
- 
     }
 
     /**
@@ -52,21 +51,22 @@ class UpsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Ups  $ups
+     * @param  \App\UpsHeartbeat  $upsHeartbeat
      * @return \Illuminate\Http\Response
      */
-    public function show(Ups $ups)
+    public function show(Pi $id)
+    //public function show(UpsHeartbeat $upsHeartbeat)
     {
-        dd($ups);
+        return view('ups.show', compact('id'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Ups  $ups
+     * @param  \App\UpsHeartbeat  $upsHeartbeat
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ups $ups)
+    public function edit(UpsHeartbeat $upsHeartbeat)
     {
         //
     }
@@ -75,10 +75,10 @@ class UpsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Ups  $ups
+     * @param  \App\UpsHeartbeat  $upsHeartbeat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ups $ups)
+    public function update(Request $request, UpsHeartbeat $upsHeartbeat)
     {
         //
     }
@@ -86,10 +86,10 @@ class UpsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Ups  $ups
+     * @param  \App\UpsHeartbeat  $upsHeartbeat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ups $ups)
+    public function destroy(UpsHeartbeat $upsHeartbeat)
     {
         //
     }

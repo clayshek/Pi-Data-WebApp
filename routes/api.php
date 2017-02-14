@@ -22,3 +22,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/PiHeartbeat', 'Api\PiHeartbeatController@store');
 //Route::delete('/PiHeartbeat/{id}', 'Api\PiHeartbeatController@destroy');
 //Route::patch('/PiHeartbeat/{id}', 'Api\PiHeartbeatController@update');
+
+Route::post('/UpsHeartbeat', 'Api\UpsHeartbeatController@store');
