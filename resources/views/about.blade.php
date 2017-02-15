@@ -24,10 +24,6 @@
             * Return stats about a USB-connected APC UPS device every hour.
         </p>
         <p>
-            The Pi scripts are currently written in Bash, but will
-            eventually be rewritten in Python.
-        </p>
-        <p>
             The app also has a web front-end which provides for view access to the
             stats, as well an authentication & authorization layer for adding (or deleting)
             new Pi devices to the system to be tracked. Various other functionality

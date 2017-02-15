@@ -9,10 +9,13 @@ About </a>page for more info.
 
 ## How to Install
 
-Pre-requisites:
+### Pre-requisites:
+
     - <a href="http://php.net/downloads.php">PHP</a> (I used v7.1.1)
     - <a href="https://getcomposer.org/">Composer</a>
     - A database engine. <a href="https://www.postgresql.org/download/">PostgreSQL</a> v9.6 used in prod. Any others <a href="https://laravel.com/docs/5.4/database">supported by Laravel</a> are ok.
+
+### Installation
 
 <pre><code>git clone https://github.com/clayshek/Pi-Data-WebApp.git
 cd Pi-Data-WebApp
@@ -30,11 +33,13 @@ Confirm APP_KEY in .env file updated accordingly.
 Run the following to create database tables:
 <pre><code>php artisan migrate</code></pre>
 
-Configure your local web server to serve the application.
-Locally for Dev, use Artisan:
+Configure your local web server to serve the application. Locally for Dev, use Artisan:
 <pre><code>php artisan serve</code></pre>
 
-In prod, I run on <a href="http://www.heroku.com">Heroku</a>, which requires the 'Procfile' file.
+In prod, I run on <a href="http://www.heroku.com">Heroku</a>, which requires the included 'Procfile' 
+file. With Heroku, app configuration variables need to be <a href="https://devcenter.heroku.com/articles/config-vars"> 
+set either via web front end or using heroku cmd line utility</a>. Alternatively, remove .env file from 
+.gitignore to include the config file in Git repo to be attached to Heroku app (less secure).
 
 ## Raspberry Pi Setup
 
@@ -59,17 +64,18 @@ High-level overview:
     - UPSNAME myupsname
     - UPSCABLE usb 
     - UPSTYPE usb
-    - DEVICE      clear out this value
+    - DEVICE   **clear out this value**
  - Restart apcupsd: <code>sudo /etc/init.d/apcupsd restart</code>
  - Run 'apcaccess status', this should report various UPS related metrics
 
 ## To-Do
 
- - Add Authorization for add / delete operations.
- - Improve error handling
- - Add Pi delete functionality
- - Add graphical reporting for APC UPS connected to Raspberry Pi 
- - Add SMTP support
+ - [x] User registration & authentication
+ - [ ] Add role based authorization for add / delete operations.
+ - [ ] Improve error handling
+ - [ ] Add Pi delete functionality
+ - [ ] Add graphical reporting for APC UPS connected to Raspberry Pi 
+ - [ ] Add SMTP support
 
 ## License
 
