@@ -11,9 +11,10 @@ About </a>page for more info.
 
 ### Pre-requisites:
 
-    - <a href="http://php.net/downloads.php">PHP</a> (I used v7.1.1)
-    - <a href="https://getcomposer.org/">Composer</a>
-    - A database engine. <a href="https://www.postgresql.org/download/">PostgreSQL</a> v9.6 used in prod. Any others <a href="https://laravel.com/docs/5.4/database">supported by Laravel</a> are ok.
+* <a href="http://php.net/downloads.php">PHP</a> (I used v7.1.1)
+* <a href="https://getcomposer.org/">Composer</a>
+*  A database engine. <a href="https://www.postgresql.org/download/">PostgreSQL</a> v9.6 used in prod. 
+Any others <a href="https://laravel.com/docs/5.4/database">supported by Laravel</a> are ok.
 
 ### Installation
 
@@ -72,10 +73,12 @@ High-level overview:
 
  - [x] User registration & authentication
  - [ ] Add role based authorization for add / delete operations.
+ - [ ] Add OAuth access token based authentication for API
  - [ ] Improve error handling
  - [ ] Add Pi delete functionality
- - [ ] Add graphical reporting for APC UPS connected to Raspberry Pi 
- - [ ] Add SMTP support
+ - [ ] Add graphical metrics reporting for APC UPS connected to Raspberry Pi 
+ - [ ] Add SMTP support for event-based notifications (Object addition / removal,
+ power related events, metric threshold breaches)
 
 ## License
 

@@ -43,9 +43,9 @@ curl --data "pi_id=$pi_id&upsname=$upsname&date=$date&model=$model&status=$statu
 
 ## To-Do
 
-- Rewrite in Python
-- Add config file for Pi with configurable (non hard coded) ID and API endpoint
-- Add SMS notification on UPS power out events
+- [ ] Rewrite in Python
+- [ ] Add config file for Pi with configurable (non hard coded) ID and API endpoint
+- [ ] Add SMS notification on UPS power out events
 
 ## License
 
