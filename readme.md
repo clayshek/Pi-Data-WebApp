@@ -35,16 +35,40 @@ Locally for Dev, use Artisan:
 
 In prod, I run on <a href="http://www.heroku.com">Heroku</a>, which requires the 'Procfile' file.
 
+## Raspberry Pi Setup
+
+Copy the 2 provided scripts (pi_heartbeat.sh & ups_data_push.sh) to a location on the Raspberry 
+Pi and configure Crontab to run the scripts on the desired schedule. Example below runs pi_heartbeat 
+every 10 minutes, and ups_data_push every hour.
+
+<pre><code>
+0,9,19,29,39,49 * * * * bash /home/pi/pi_heartbeat.sh
+0 * * * * bash /home/pi/ups_data_push.sh
+</code></pre>
+
+I have an APC model ES350 UPS attached to the Pi via USB, and use the apcupsd (APC UPS Daemon)
+software for communication to the UPS. This assumes a similar setup, installed & configured as 
+documented at <a href="http://www.apcupsd.org/">www.apcupsd.org</a>.
+
+High-level overview:
+
+ - Install package: <code>sudo apt-get install apcupsd</code>
+ - Set 'ISCONFIGURED=yes' in /etc/default/apcupsd
+ - Set following values in /etc/apcupsd/apcupsd.conf:
+    - UPSNAME myupsname
+    - UPSCABLE usb 
+    - UPSTYPE usb
+    - DEVICE      <clear / null this value>
+ - Restart apcupsd: <code>sudo /etc/init.d/apcupsd restart</code>
+ - Run 'apcaccess status', this should report various UPS related metrics
 
 ## To-Do
 
- - User Registration
- - Authentication & Authorization
- - Error handling
+ - Add Authorization for add / delete operations.
+ - Improve error handling
  - Add Pi delete functionality
- - Add reporting for APC UPS connected to Raspberry Pi 
+ - Add graphical reporting for APC UPS connected to Raspberry Pi 
  - Add SMTP support
- - Upload & document scripts used on Raspberry Pi
  - Add config file for Pi with configurable ID and API endpoint
 
 ## License

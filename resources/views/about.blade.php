@@ -13,15 +13,15 @@
             and Raspberry Pi -> web API proof of concepting.
         </p>
         <p>
-            The application has a REST-ful API which receives data from a remote 
-            <a href="https://www.raspberrypi.org/">Raspberry Pi</a> which has 
-            scripts that currently do two things:
+            The application has a REST-ful API which receives data pushed from a 
+            remote <a href="https://www.raspberrypi.org/">Raspberry Pi</a> which runs 
+            scripts (via Crontab) that currently do two things:
         </p>
         <p> 
             * Heartbeat every 10 minutes with various system stats.
         </p>
         <p>
-            * Return stats about a connected APC UPS device every hour.
+            * Return stats about a USB-connected APC UPS device every hour.
         </p>
         <p>
             The Pi scripts are currently written in Bash, but will
