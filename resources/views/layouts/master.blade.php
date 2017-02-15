@@ -105,7 +105,7 @@
                     <a href="/">Home</a>
                     <a href="/pi">Pi Details</a>
                     <a href="/ups">UPS Stats</a>
-                    <a href="https://github.com/clayshek/Pi-Data-WebApp">GitHub</a>
+                    <a href="https://github.com/clayshek/Pi-Data-WebApp" target="_blank">GitHub</a>
                     <a href="/about">About</a>
                 </div>
             </div>

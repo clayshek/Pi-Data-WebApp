@@ -4,7 +4,8 @@
 
 PHP web application developed with <a href="https://laravel.com/docs">Laravel</a> framework (v5.4) for receiving data from 
 a Raspberry Pi via an API, and displaying that data via a web front-end. In production
-WIP running on Heroku app engine at http://pidatawebapp.herokuapp.com/.
+WIP running on Heroku app engine at http://pidatawebapp.herokuapp.com/. See <a href="http://pidatawebapp.herokuapp.com/about">
+About </a>page for more info.
 
 ## How to Install
 
@@ -37,13 +38,13 @@ In prod, I run on <a href="http://www.heroku.com">Heroku</a>, which requires the
 
 ## Raspberry Pi Setup
 
-Copy the 2 provided scripts (pi_heartbeat.sh & ups_data_push.sh) to a location on the Raspberry 
-Pi and configure Crontab to run the scripts on the desired schedule. Example below runs pi_heartbeat 
-every 10 minutes, and ups_data_push every hour.
+Copy the 2 provided scripts (pi_heartbeat.sh & ups_data_push.sh, see Pi_bash_scripts.md) to a 
+location on the Raspberry Pi and configure Crontab to run the scripts on the desired schedule. 
+Example below runs pi_heartbeat every 10 minutes, and ups_data_push every hour.
 
 <pre><code>
-0,9,19,29,39,49 * * * * bash /home/pi/pi_heartbeat.sh
-0 * * * * bash /home/pi/ups_data_push.sh
+0,9,19,29,39,49 * * * * bash /opt/pidata/pi_heartbeat.sh
+0 * * * * bash /opt/pidata/ups_data_push.sh
 </code></pre>
 
 I have an APC model ES350 UPS attached to the Pi via USB, and use the apcupsd (APC UPS Daemon)
@@ -58,7 +59,7 @@ High-level overview:
     - UPSNAME myupsname
     - UPSCABLE usb 
     - UPSTYPE usb
-    - DEVICE      <clear / null this value>
+    - DEVICE      clear out this value
  - Restart apcupsd: <code>sudo /etc/init.d/apcupsd restart</code>
  - Run 'apcaccess status', this should report various UPS related metrics
 
@@ -69,7 +70,6 @@ High-level overview:
  - Add Pi delete functionality
  - Add graphical reporting for APC UPS connected to Raspberry Pi 
  - Add SMTP support
- - Add config file for Pi with configurable ID and API endpoint
 
 ## License
 
