@@ -2,6 +2,7 @@
 
 @section ('content')
 
+<div id="ups-stats" style="overflow:scroll; height:500px;">
     <h1>UPS Stats:</h1>
     <h4>Connected to Raspberry Pi: "{{ $id->name }}"</h4>
 
@@ -45,5 +46,5 @@
             Back
         </a>
     </h3>
-
+</div>
 @endsection
