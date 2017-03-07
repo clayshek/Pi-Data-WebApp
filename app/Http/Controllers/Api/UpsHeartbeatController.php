@@ -47,11 +47,23 @@ class UpsHeartbeatController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    * Return line voltage / date combination in JSON
+    *
+    */
+    public function showLinev($id)
+    {
+        return UpsHeartbeat::where('pi_id', $id)
+        ->select('date', 'linev')
+        ->orderBy('date', 'asc')
+        ->get();
+       
+        /*
+        @foreach ($id->upsHeartbeats as $heartbeat)
+                 [ {{ $heartbeat->date }}, 122],
+                  
+        @endforeach
+        */
+    }
 
     /**
      * Update the specified resource in storage.

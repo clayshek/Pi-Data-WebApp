@@ -18,6 +18,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::post('/UpsHeartbeat', 'Api\UpsHeartbeatController@store');
+Route::get('/UpsHeartbeat/{id}/linev', 'Api\UpsHeartbeatController@showLinev');
 
 //Route::get('/PiHeartbeat', 'Api\PiHeartbeatController@index'); //->middleware('auth:api'); not figured out yet
 //Route::get('/PiHeartbeat/{id}', 'Api\PiHeartbeatController@show');

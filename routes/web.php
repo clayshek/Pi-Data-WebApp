@@ -26,6 +26,7 @@ Route::get('/pi/{pi}', 'PiController@show');
 
 Route::get('/ups', 'UpsHeartbeatController@index');
 Route::get('/ups/{id}', 'UpsHeartbeatController@show');
+Route::get('/ups/{id}/graph/linev', 'UpsHeartbeatController@showlinevgraph');
 
 Route::get('/about', function () {
     return view('about');

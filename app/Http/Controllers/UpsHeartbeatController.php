@@ -60,6 +60,36 @@ class UpsHeartbeatController extends Controller
         return view('ups.show', compact('id'));
     }
 
+    public static function showlinevgraph(Pi $id)
+    {
+        //dd($id->id);  //Debug
+        
+        $voltages = \Lava::DataTable();
+
+        $data = UpsHeartbeat::where('pi_id', $id->id)
+        ->select('date', 'linev')
+        ->orderBy('date', 'asc')
+        ->get()->toArray();
+
+        $voltages->addDateColumn('Date')
+            ->addNumberColumn('Voltage');
+            //->addRows($data);
+            //->addRow(['2017-03-03', 122]);
+
+        foreach ($id->upsHeartbeats as $heartbeats) {
+            $d = \Carbon\Carbon::parse($heartbeats->date)->format('Y-m-d');
+            $v = $heartbeats->linev;
+            $voltages->addRow([$d, $v]);
+        }
+        
+       
+        //dd($d);
+
+        $linechart = \Lava::LineChart('Voltages', $voltages, ['title' => 'Voltage History']);
+
+        return view('ups.linevgraph', compact('linechart'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

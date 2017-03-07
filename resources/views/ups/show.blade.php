@@ -6,6 +6,11 @@
     <h1>UPS Stats:</h1>
     <h4>Connected to Raspberry Pi: "{{ $id->name }}"</h4>
 
+<!--
+    <h4><a href="javascript:window.open('/ups/{{ $id->id }}/graph/linev','Line Voltage Graph','width=500,height=500')">View Line Voltage Graph</a></h4>
+-->
+    <h4><a href="/ups/{{ $id->id }}/graph/linev">View Line Voltage Graph</a></h4>
+
         <h5>
             <center>
             <table border=1>
@@ -16,8 +21,8 @@
                     <th>UPS Model</th>
                     <th>Status</th>
                     <th>Line Volts</th>
-                    <th>Load Percentage</th>
-                    <th>Battery Charge</th>
+                    <th>Load %</th>
+                    <th>Battery Charge %</th>
                     <th>Time Left</th>
                     <th>Battery Volts</th>
                     <th>Last Transfer</th>
@@ -39,12 +44,12 @@
         @endforeach                
             </table>
             </center>
-        </h4>
+        </h5>
 
     <h5>
         <a href="{{ URL::previous() }}">
             Back
         </a>
-    </h3>
+    </h5>
 </div>
 @endsection
