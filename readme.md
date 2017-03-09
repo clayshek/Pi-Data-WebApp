@@ -76,7 +76,7 @@ High-level overview:
  - [ ] Add OAuth access token based authentication for API
  - [ ] Improve error handling
  - [ ] Add Pi delete functionality
- - [ ] Add graphical metrics reporting for APC UPS connected to Raspberry Pi 
+ - [x] Add graphical line voltage reporting for APC UPS connected to Raspberry Pi 
  - [ ] Add SMTP support for event-based notifications (Object addition / removal,
  power related events, metric threshold breaches)
 
