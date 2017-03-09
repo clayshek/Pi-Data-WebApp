@@ -85,7 +85,11 @@ class UpsHeartbeatController extends Controller
        
         //dd($d);
 
-        $linechart = \Lava::LineChart('Voltages', $voltages, ['title' => 'Voltage History']);
+        $linechart = \Lava::LineChart('Voltages', $voltages, [
+            'title' => 'Voltage History',
+            'height' => 300,
+            'width' => 900
+            ]);
 
         return view('ups.linevgraph', compact('linechart'));
     }
