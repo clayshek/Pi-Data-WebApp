@@ -8,6 +8,6 @@ class Pi extends Model
 {
     public function upsHeartbeats()
     {
-        return $this->hasMany('App\UpsHeartbeat');
+        return $this->hasMany('App\UpsHeartbeat')->orderBy('date');
     }
 }
