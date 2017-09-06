@@ -97,7 +97,7 @@ class PiController extends Controller
             $heartbeat_age_min = $pidata->updated_at->diffInMinutes($now);
             //dd($heartbeat_age_min); For testing & debug 
 
-            if ($heartbeat_age_min > 12)
+            if ($heartbeat_age_min > 125)
                 $pidata->current = false;
             else
                 $pidata->current = true;
