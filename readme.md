@@ -44,6 +44,8 @@ set either via web front end or using heroku cmd line utility</a>. Alternatively
 
 ## Raspberry Pi Setup
 
+NOW IN DOCKER - https://github.com/clayshek/apcupsd-raspi
+
 Copy the 2 provided scripts (pi_heartbeat.sh & ups_data_push.sh, see Pi_bash_scripts.md) to a 
 location on the Raspberry Pi and configure Crontab to run the scripts on the desired schedule. 
 Example below runs pi_heartbeat every 10 minutes, and ups_data_push every hour.
